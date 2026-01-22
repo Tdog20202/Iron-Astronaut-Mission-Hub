@@ -1,0 +1,268 @@
+:root[data-theme="dark"] {
+  --bg: #05070a;
+  --fg: #f5f5f5;
+  --accent: #66fcf1;
+  --accent-soft: rgba(102,252,241,0.15);
+  --card: #101821;
+  --muted: #9aa0aa;
+  --danger: #f97373;
+}
+
+:root[data-theme="light"] {
+  --bg: #f5f7fb;
+  --fg: #111827;
+  --accent: #2563eb;
+  --accent-soft: rgba(37,99,235,0.12);
+  --card: #ffffff;
+  --muted: #6b7280;
+  --danger: #b91c1c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #111827 0, #020617 55%);
+  color: var(--fg);
+}
+
+#main {
+  padding: 12px 12px 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 22px;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 4px 0 8px;
+}
+
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(148,163,184,0.3);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.btn {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 12px;
+}
+
+.btn.danger {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+#sidebarToggle {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  z-index: 10000;
+  background: var(--accent);
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-size: 18px;
+}
+
+#sidebar {
+  position: fixed;
+  left: -260px;
+  top: 0;
+  width: 260px;
+  height: 100%;
+  background: var(--card);
+  border-right: 1px solid rgba(148,163,184,0.3);
+  padding: 10px;
+  overflow-y: auto;
+  transition: left 0.3s ease;
+  z-index: 9999;
+}
+
+#sidebar.open {
+  left: 0;
+}
+
+#sidebar h2 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.sidebar-link {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 6px 8px;
+  margin-bottom: 4px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: var(--fg);
+  font-size: 13px;
+}
+
+.sidebar-link.active {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.checklist-item {
+  font-size: 12px;
+  margin-bottom: 3px;
+}
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.tab {
+  flex: 1;
+  padding: 6px 4px;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,0.5);
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.tab.active {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.tab-body {
+  display: none;
+}
+
+.tab-body.active {
+  display: block;
+}
+
+.pill {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(148,163,184,0.15);
+  font-size: 11px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+
+.pill.mod {
+  border: 1px solid var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.mission-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 3px;
+}
+
+.mission-name {
+  font-weight: 500;
+  margin-right: 6px;
+}
+
+.mission-dv {
+  color: var(--muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+input, select {
+  background: var(--card);
+  color: var(--fg);
+  border-radius: 4px;
+  border: 1px solid rgba(148,163,184,0.5);
+  padding: 4px 6px;
+  font-size: 12px;
+}
+
+.calc-row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.calc-row label {
+  flex: 0 0 80px;
+  font-size: 12px;
+  padding-top: 4px;
+}
+
+.calc-row input, .calc-row select {
+  flex: 1;
+}
+
+.calc-output {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.timeline-item {
+  border-left: 2px solid var(--accent);
+  padding-left: 8px;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.timeline-item span {
+  display: block;
+}
+
+.timeline-item .title {
+  font-weight: 600;
+}
+
+.timeline-item .meta {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.unlock-anim {
+  animation: unlockPulse 0.6s ease-out;
+}
+
+@keyframes unlockPulse {
+  0% { box-shadow: 0 0 0 rgba(102,252,241,0.0); transform: scale(1); }
+  50% { box-shadow: 0 0 20px rgba(102,252,241,0.7); transform: scale(1.01); }
+  100% { box-shadow: 0 0 0 rgba(102,252,241,0.0); transform: scale(1); }
+}
