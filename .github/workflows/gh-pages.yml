@@ -16,6 +16,7 @@ env:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository (full history)
         uses: actions/checkout@v4
@@ -26,11 +27,15 @@ jobs:
       - name: Setup Node (optional, used if you have npm build steps)
         uses: actions/setup-node@v4
         with:
-          node-version: "18"
+          node-version: '18'
 
       - name: Install dependencies (if package.json exists)
         run: |
-          if [ -f package.json ]; then npm ci; else echo "no package.json, skipping install"; fi
+          if [ -f package.json ]; then
+            npm ci
+          else
+            echo "no package.json, skipping install"
+          fi
 
       - name: Build site (optional)
         run: |
@@ -53,9 +58,8 @@ jobs:
             echo "Publish directory does not exist: $PUBLISH_DIR"
             echo "Listing top-level to help debugging:"
             ls -la .
-            # Create a minimal placeholder to allow testing the deploy step (remove if not desired)
-            echo "<html><body><h1>Placeholder</h1></body></html>" > ./index.html
-            echo "Created placeholder index.html for testing"
+            echo "Creating placeholder index.html for testing"
+            printf '%s\n' "<html><body><h1>Placeholder</h1></body></html>" > ./index.html
           fi
 
       - name: Deploy to GitHub Pages
@@ -63,9 +67,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: ${{ env.PUBLISH_DIR }}      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: ./  # change to ./dist or ./build if your build outputs there
+          publish_dir: ${{ env.PUBLISH_DIR }}
