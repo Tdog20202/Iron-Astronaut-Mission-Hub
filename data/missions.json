@@ -1,0 +1,47 @@
+[
+  { "id": 1, "name": "Suborbital Hop", "dv": "1,500–2,000 m/s", "tags": ["suborbital","earth","early"] },
+  { "id": 2, "name": "First Orbit", "dv": "3,500–4,000 m/s", "tags": ["orbit","earth","early"] },
+  { "id": 3, "name": "Controlled Reentry", "dv": "≈ Orbit", "tags": ["reentry","earth"] },
+  { "id": 4, "name": "First Satellite", "dv": "3,500–4,200 m/s", "tags": ["satellite","earth"] },
+  { "id": 5, "name": "Mun Flyby", "dv": "6,000–6,500 m/s", "tags": ["mun","flyby"] },
+  { "id": 6, "name": "Mun Orbit", "dv": "7,000–7,500 m/s", "tags": ["mun","orbit"] },
+  { "id": 7, "name": "Mun Landing (Uncrewed)", "dv": "9,000–10,000 m/s", "tags": ["mun","landing","uncrewed"] },
+  { "id": 8, "name": "Mun Landing + Return", "dv": "10,000–11,000 m/s", "tags": ["mun","landing","return"] },
+
+  { "id": 9, "name": "First Docking", "dv": "4,000–4,500 m/s", "tags": ["leo","docking"] },
+  { "id": 10, "name": "LEO Station (3 modules)", "dv": "4,000–4,500 / launch", "tags": ["leo","station"] },
+  { "id": 11, "name": "GEO Satellite", "dv": "5,000–5,500 m/s", "tags": ["geo","satellite"] },
+  { "id": 12, "name": "Mars Flyby", "dv": "7,000–8,000 m/s", "tags": ["mars","flyby"] },
+  { "id": 13, "name": "Mars Orbit", "dv": "8,000–9,500 m/s", "tags": ["mars","orbit"] },
+  { "id": 14, "name": "Mars Landing (Uncrewed)", "dv": "9,000–10,500 m/s", "tags": ["mars","landing","uncrewed"] },
+  { "id": 15, "name": "Mars Landing + Return", "dv": "11,000–13,000 m/s", "tags": ["mars","landing","return"] },
+
+  { "id": 16, "name": "Venus Flyby", "dv": "7,000–8,000 m/s", "tags": ["venus","flyby"] },
+  { "id": 17, "name": "Asteroid Rendezvous", "dv": "7,500–9,000 m/s", "tags": ["asteroid","rendezvous"] },
+  { "id": 18, "name": "Jupiter Transfer", "dv": "9,000–11,000 m/s", "tags": ["jupiter","transfer"] },
+  { "id": 19, "name": "Jupiter Orbit", "dv": "11,000–13,000 m/s", "tags": ["jupiter","orbit"] },
+  { "id": 20, "name": "Titan Landing (Uncrewed)", "dv": "11,000–13,500 m/s", "tags": ["titan","landing","uncrewed"] },
+  { "id": 21, "name": "Mars Cargo Lander", "dv": "9,000–11,000 m/s", "tags": ["mars","cargo"] },
+  { "id": 22, "name": "Mars Surface Base", "dv": "9,000–11,000 / launch", "tags": ["mars","base"] },
+
+  { "id": 23, "name": "High‑Orbit Station", "dv": "4,500–5,500 m/s", "tags": ["station","high-orbit"] },
+  { "id": 24, "name": "Jupiter System Tour", "dv": "10,000–12,500 m/s", "tags": ["jupiter","tour"] },
+  { "id": 25, "name": "Titan Landing + Return", "dv": "14,000–17,000 m/s", "tags": ["titan","landing","return"] },
+  { "id": 26, "name": "Saturn Orbit", "dv": "10,500–12,500 m/s", "tags": ["saturn","orbit"] },
+  { "id": 27, "name": "Uranus Flyby", "dv": "10,000–12,000 m/s", "tags": ["uranus","flyby"] },
+  { "id": 28, "name": "Neptune Flyby", "dv": "11,000–13,000 m/s", "tags": ["neptune","flyby"] },
+  { "id": 29, "name": "Neptune Orbit", "dv": "13,500–16,000 m/s", "tags": ["neptune","orbit"] },
+
+  { "id": 30, "name": "Triton Landing", "dv": "14,000–17,000 m/s", "tags": ["triton","landing"] },
+  { "id": 31, "name": "Triton Landing + Return", "dv": "18,000–22,000 m/s", "tags": ["triton","landing","return"] },
+  { "id": 32, "name": "Neptune Capture + Return", "dv": "15,000–18,000 m/s", "tags": ["neptune","return"] },
+  { "id": 33, "name": "Outer Planets Sample Return", "dv": "16,000–20,000 m/s", "tags": ["outer","sample"] },
+  { "id": 34, "name": "Grand Tour Flyby Chain", "dv": "8,000–10,000 m/s", "tags": ["grand","tour"] },
+
+  { "id": 35, "name": "Interstellar Precursor", "dv": "12,000–15,000 m/s", "tags": ["interstellar","precursor"] },
+  { "id": 36, "name": "Crewed Neptune Landing", "dv": "20,000–25,000 m/s", "tags": ["neptune","landing","crewed"] },
+  { "id": 37, "name": "Crewed Grand Tour", "dv": "12,000–15,000 m/s", "tags": ["grand","tour","crewed"] },
+  { "id": 38, "name": "Permanent Mars Colony", "dv": "9,000–11,000 / module", "tags": ["mars","colony"] },
+  { "id": 39, "name": "Solar System Infrastructure", "dv": "varies", "tags": ["infrastructure"] },
+  { "id": 40, "name": "IRON ASTRONAUT MISSION", "dv": "22,000–26,000 m/s", "tags": ["iron","astronaut","final"] }
+]

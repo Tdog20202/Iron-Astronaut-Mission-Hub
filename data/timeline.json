@@ -1,0 +1,8 @@
+[
+  { "label": "Phase 1 — Early Flight", "range": "Missions 1–8" },
+  { "label": "Phase 2 — Orbital Ops", "range": "Missions 9–15" },
+  { "label": "Phase 3 — Interplanetary", "range": "Missions 16–22" },
+  { "label": "Phase 4 — Deep Space", "range": "Missions 23–29" },
+  { "label": "Phase 5 — Outer Planets Master", "range": "Missions 30–34" },
+  { "label": "Phase 6 — Iron Astronaut Trials", "range": "Missions 35–40" }
+]

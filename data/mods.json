@@ -1,0 +1,44 @@
+[
+  {
+    "id": "VanillaPlus",
+    "name": "VanillaPlus",
+    "tier": 1,
+    "description": "Small QoL and stock-like upgrades."
+  },
+  {
+    "id": "LurinsThings",
+    "name": "LurinsThings",
+    "tier": 1,
+    "description": "Structural and decorative parts."
+  },
+  {
+    "id": "Electricity",
+    "name": "Electricity",
+    "tier": 2,
+    "description": "Power systems for long-duration missions."
+  },
+  {
+    "id": "RSAParts",
+    "name": "RSAParts",
+    "tier": 3,
+    "description": "Deep-space engines and tanks."
+  },
+  {
+    "id": "RealSpace",
+    "name": "RealSpace",
+    "tier": 4,
+    "description": "Realistic high-efficiency engines."
+  },
+  {
+    "id": "OTSStar",
+    "name": "OTSStar",
+    "tier": 4,
+    "description": "Advanced/futuristic propulsion systems."
+  },
+  {
+    "id": "lasers",
+    "name": "lasers",
+    "tier": 5,
+    "description": "Endgame exotic propulsion."
+  }
+]

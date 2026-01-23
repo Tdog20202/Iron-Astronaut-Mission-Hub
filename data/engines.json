@@ -1,0 +1,179 @@
+[
+  {
+    "name": "LV-05",
+    "mod": "VanillaPlus",
+    "thrust": 180,
+    "isp_vac": 310,
+    "isp_atm": 280,
+    "mass": 1.2,
+    "tags": ["booster", "early"]
+  },
+  {
+    "name": "LV-10",
+    "mod": "VanillaPlus",
+    "thrust": 350,
+    "isp_vac": 320,
+    "isp_atm": 290,
+    "mass": 2.0,
+    "tags": ["booster", "orbital"]
+  },
+  {
+    "name": "VP-Vac",
+    "mod": "VanillaPlus",
+    "thrust": 90,
+    "isp_vac": 360,
+    "isp_atm": 120,
+    "mass": 0.8,
+    "tags": ["vacuum", "lander"]
+  },
+
+  {
+    "name": "LT-Micro",
+    "mod": "LurinsThings",
+    "thrust": 25,
+    "isp_vac": 300,
+    "isp_atm": 260,
+    "mass": 0.2,
+    "tags": ["micro", "lander"]
+  },
+  {
+    "name": "LT-Compact",
+    "mod": "LurinsThings",
+    "thrust": 60,
+    "isp_vac": 320,
+    "isp_atm": 280,
+    "mass": 0.5,
+    "tags": ["orbital", "lander"]
+  },
+
+  {
+    "name": "E-ION",
+    "mod": "Electricity",
+    "thrust": 5,
+    "isp_vac": 2200,
+    "isp_atm": 0,
+    "mass": 0.4,
+    "tags": ["ion", "deep-space"]
+  },
+  {
+    "name": "E-ArcJet",
+    "mod": "Electricity",
+    "thrust": 20,
+    "isp_vac": 900,
+    "isp_atm": 0,
+    "mass": 0.6,
+    "tags": ["electric", "deep-space"]
+  },
+
+  {
+    "name": "RS-25",
+    "mod": "RSAParts",
+    "thrust": 1860,
+    "isp_vac": 452,
+    "isp_atm": 366,
+    "mass": 3.5,
+    "tags": ["booster", "orbital"]
+  },
+  {
+    "name": "RSA-Vac",
+    "mod": "RSAParts",
+    "thrust": 300,
+    "isp_vac": 420,
+    "isp_atm": 150,
+    "mass": 1.4,
+    "tags": ["vacuum", "lander"]
+  },
+  {
+    "name": "RSA-Nuke",
+    "mod": "RSAParts",
+    "thrust": 70,
+    "isp_vac": 850,
+    "isp_atm": 0,
+    "mass": 2.5,
+    "tags": ["nuclear", "deep-space"]
+  },
+
+  {
+    "name": "RealVac-1",
+    "mod": "RealSpace",
+    "thrust": 250,
+    "isp_vac": 380,
+    "isp_atm": 320,
+    "mass": 1.2,
+    "tags": ["vacuum", "orbital"]
+  },
+  {
+    "name": "RealNuke-2",
+    "mod": "RealSpace",
+    "thrust": 60,
+    "isp_vac": 900,
+    "isp_atm": 0,
+    "mass": 2.2,
+    "tags": ["nuclear", "deep-space"]
+  },
+  {
+    "name": "RealCryo-X",
+    "mod": "RealSpace",
+    "thrust": 1100,
+    "isp_vac": 460,
+    "isp_atm": 350,
+    "mass": 4.0,
+    "tags": ["booster", "cryo"]
+  },
+
+  {
+    "name": "OTS-StarDrive",
+    "mod": "OTSStar",
+    "thrust": 90,
+    "isp_vac": 900,
+    "isp_atm": 0,
+    "mass": 0.8,
+    "tags": ["advanced", "deep-space"]
+  },
+  {
+    "name": "OTS-FusionLite",
+    "mod": "OTSStar",
+    "thrust": 150,
+    "isp_vac": 1500,
+    "isp_atm": 0,
+    "mass": 1.0,
+    "tags": ["fusion", "deep-space"]
+  },
+  {
+    "name": "OTS-FusionHeavy",
+    "mod": "OTSStar",
+    "thrust": 400,
+    "isp_vac": 1800,
+    "isp_atm": 0,
+    "mass": 2.5,
+    "tags": ["fusion", "outer-planets"]
+  },
+
+  {
+    "name": "LaserDrive-X",
+    "mod": "lasers",
+    "thrust": 40,
+    "isp_vac": 2500,
+    "isp_atm": 0,
+    "mass": 0.4,
+    "tags": ["exotic", "deep-space"]
+  },
+  {
+    "name": "LaserDrive-XL",
+    "mod": "lasers",
+    "thrust": 120,
+    "isp_vac": 3000,
+    "isp_atm": 0,
+    "mass": 1.0,
+    "tags": ["exotic", "outer-planets"]
+  },
+  {
+    "name": "LaserArray-Core",
+    "mod": "lasers",
+    "thrust": 300,
+    "isp_vac": 3500,
+    "isp_atm": 0,
+    "mass": 2.0,
+    "tags": ["exotic", "interstellar"]
+  }
+]
