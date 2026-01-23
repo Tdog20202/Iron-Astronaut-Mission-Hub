@@ -1,4 +1,4 @@
-name: Deploy site to GitHub Pages (diagnostic)
+name: Build and deploy to GitHub Pages (recommended)
 
 on:
   push:
@@ -10,61 +10,44 @@ permissions:
   pages: write
   id-token: write
 
-env:
-  PUBLISH_DIR: ./   # change to ./dist or ./build if your site outputs to a directory
-
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
-
+    outputs:
+      artifact-path: ${{ steps.set-path.outputs.PATH }}
     steps:
-      - name: Checkout repository (full history)
+      - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          persist-credentials: true
 
-      - name: Setup Node (optional, used if you have npm build steps)
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '18'
 
-      - name: Install dependencies (if package.json exists)
+      - name: Install dependencies
         run: |
-          if [ -f package.json ]; then
-            npm ci
-          else
-            echo "no package.json, skipping install"
-          fi
+          if [ -f package.json ]; then npm ci; else echo "no package.json, skipping install"; fi
 
-      - name: Build site (optional)
+      - name: Build site
+        id: build-site
         run: |
+          # change these commands to your build pipeline if you have one
           if [ -f package.json ] && npm run | grep -q " build"; then
             npm run build
+            # set output folder if your build outputs to ./dist or ./build
+            echo "::set-output name=PATH::dist"
           else
-            echo "no build script detected; assuming site is static in repo root"
+            # no build; publish repo root
+            echo "::set-output name=PATH::./"
           fi
-
-      - name: Show repo and publish_dir contents (diagnostic)
-        run: |
-          echo "Working directory: $(pwd)"
-          echo "Repository root contents:"
-          ls -la
-          echo "Publish directory: $PUBLISH_DIR"
-          if [ -d "$PUBLISH_DIR" ]; then
-            echo "Publish directory contents:"
-            ls -la "$PUBLISH_DIR"
-          else
-            echo "Publish directory does not exist: $PUBLISH_DIR"
-            echo "Listing top-level to help debugging:"
-            ls -la .
-            echo "Creating placeholder index.html for testing"
-            printf '%s\n' "<html><body><h1>Placeholder</h1></body></html>" > ./index.html
-          fi
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: ${{ env.PUBLISH_DIR }}
+          path: ${{ steps.build-site.outputs.PATH }}
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
