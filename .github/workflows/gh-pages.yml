@@ -1,21 +1,27 @@
-name: Deploy site to GitHub Pages
+name: Deploy site to GitHub Pages (diagnostic)
 
 on:
   push:
     branches:
-      - main    # change to master if your default branch is 'master'
+      - main
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
+env:
+  PUBLISH_DIR: ./   # change to ./dist or ./build if your site outputs to a directory
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout repository (full history)
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
 
       - name: Setup Node (optional, used if you have npm build steps)
         uses: actions/setup-node@v4
@@ -34,7 +40,30 @@ jobs:
             echo "no build script detected; assuming site is static in repo root"
           fi
 
+      - name: Show repo and publish_dir contents (diagnostic)
+        run: |
+          echo "Working directory: $(pwd)"
+          echo "Repository root contents:"
+          ls -la
+          echo "Publish directory: $PUBLISH_DIR"
+          if [ -d "$PUBLISH_DIR" ]; then
+            echo "Publish directory contents:"
+            ls -la "$PUBLISH_DIR"
+          else
+            echo "Publish directory does not exist: $PUBLISH_DIR"
+            echo "Listing top-level to help debugging:"
+            ls -la .
+            # Create a minimal placeholder to allow testing the deploy step (remove if not desired)
+            echo "<html><body><h1>Placeholder</h1></body></html>" > ./index.html
+            echo "Created placeholder index.html for testing"
+          fi
+
       - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ${{ env.PUBLISH_DIR }}      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
