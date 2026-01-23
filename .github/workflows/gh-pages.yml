@@ -14,7 +14,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     outputs:
-      artifact-path: ${{ steps.set-path.outputs.PATH }}
+      artifact-path: ${{ steps.build-site.outputs.PATH }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -35,6 +35,23 @@ jobs:
           if [ -f package.json ] && npm run | grep -q " build"; then
             npm run build
             # set output folder if your build outputs to ./dist or ./build
+            echo "PATH=dist" >> $GITHUB_OUTPUT
+          else
+            # no build; publish repo root
+            echo "PATH=./" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ${{ steps.build-site.outputs.PATH }}
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4            # set output folder if your build outputs to ./dist or ./build
             echo "::set-output name=PATH::dist"
           else
             # no build; publish repo root
